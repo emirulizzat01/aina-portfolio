@@ -1,257 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nor Aina Najwa | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nor Aina Najwa - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      scroll-behavior: smooth;
-      color: #343a40;
-    }
-
-    header {
-      background: #0077b6;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    nav {
-      background: #023e8a;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    nav a {
-      color: white;
-      margin: 0.5rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 2rem 10%;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    h2 {
-      border-bottom: 2px solid #0077b6;
-      padding-bottom: 0.5rem;
-    }
-
-    .experience, .skills, .education, .publication {
-      margin-bottom: 2rem;
-    }
-
-    .experience-item, .education-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .skill {
-      background: #48cae4;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      color: white;
-    }
-
-    .print-button {
-      text-align: center;
-      margin: 1rem;
-    }
-
-    .print-button button {
-      padding: 0.75rem 1.5rem;
-      background: #0096c7;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      background: #0077b6;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    @keyframes fadeIn {
+    /* Custom animations */
+    @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @media print {
-      nav, .print-button, footer {
-        display: none;
-      }
-
-      body {
-        background: white;
-        color: black;
-      }
-
-      section {
-        page-break-after: always;
-      }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
     }
-
-    @media screen and (max-width: 600px) {
-      header {
-        padding: 1rem;
-        font-size: 14px;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      section {
-        padding: 1rem 5%;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
-      .print-button button {
-        width: 90%;
-        font-size: 16px;
-        padding: 1rem;
-      }
-
-      .skills-list {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .skill {
-        width: 100%;
-        text-align: center;
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    /* Smooth scrolling for tall screens */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* High-resolution mobile optimization */
+    @media (min-device-pixel-ratio: 2) {
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
     }
   </style>
 </head>
-<body>
-
-  <header>
-    <h1>Nor Aina Najwa</h1>
-    <p>Administrative & Library Professional | Johor, Malaysia</p>
-    <p>📧 ainaa.ibrahim00@gmail.com | 📞 0199356465</p>
-  </header>
-
-  <div class="print-button">
-    <button onclick="window.print()">📄 Save as PDF / Print</button>
-  </div>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#publication">Publication</a>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- Navigation -->
+  <nav class="bg-blue-600 text-white p-4 fixed w-full top-0 z-10 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Nor Aina Najwa</h1>
+      <ul class="flex space-x-4">
+        <li><a href="#about" class="hover:text-blue-200">About</a></li>
+        <li><a href="#experience" class="hover:text-blue-200">Experience</a></li>
+        <li><a href="#education" class="hover:text-blue-200">Education</a></li>
+        <li><a href="#skills" class="hover:text-blue-200">Skills</a></li>
+        <li><a href="#publication" class="hover:text-blue-200">Publication</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Detail-oriented and organized professional with experience in administrative support, records management, and event coordination. After dedicating time to raising children, I’m eager to re-enter the workforce and contribute effectively to a dynamic team.</p>
+  <!-- Hero Section -->
+  <section id="about" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-600 to-blue-400 text-white pt-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fadeInUp">Nor Aina Najwa Binti Ibrahim</h2>
+      <p class="text-lg md:text-xl mb-6 animate-fadeInUp" style="animation-delay: 0.2s;">Detail-oriented professional with expertise in administration and event coordination</p>
+      <p class="text-md mb-6 animate-fadeInUp" style="animation-delay: 0.4s;">81930 Bandar Penawar, Johor | <a href="mailto:ainaa.ibrahim00@gmail.com" class="underline">ainaa.ibrahim00@gmail.com</a> | 0199356465</p>
+      <p class="text-md max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 0.6s;">
+        Detail-oriented and organized professional with experience in administrative support, records management, and event coordination. Skilled in handling office operations, managing documentation, and streamlining workflows for efficiency. After dedicating the past two years to raising my children, I am eager to re-enter the workforce and contribute to a dynamic team.
+      </p>
+    </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
+  <!-- Experience Section -->
+  <section id="experience" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center animate-slideInLeft">Experience</h2>
+      <div class="space-y-8">
+        <div class="animate-slideInLeft" style="animation-delay: 0.2s;">
+          <h3 class="text-xl font-semibold">Administrative Assistant & Teacher</h3>
+          <p class="text-gray-600">Al-Ihsan Integrated Islamic School, Pasir Gudang | April 2022 - January 2023</p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Managed student records, attendance tracking, and document filing for accurate data management</li>
+            <li>Coordinated school events, scheduling, and logistics for smooth operations</li>
+            <li>Developed dynamic lesson plans tailored to diverse learning needs</li>
+            <li>Coordinated classroom resources and displays to enhance engagement</li>
+          </ul>
+        </div>
+        <div class="animate-slideInLeft" style="animation-delay: 0.4s;">
+          <h3 class="text-xl font-semibold">Librarian</h3>
+          <p class="text-gray-600">Straits International School, Rawang | August 2018 - February 2022</p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Managed acquisition, cataloging, and circulation processes for the school community</li>
+            <li>Oversaw office documentation and filing systems for efficient data retrieval</li>
+            <li>Assisted in budgeting and financial tracking for department expenditures</li>
+            <li>Developed user-friendly resource databases for staff and students</li>
+          </ul>
+        </div>
+        <div class="animate-slideInLeft" style="animation-delay: 0.6s;">
+          <h3 class="text-xl font-semibold">Librarian Intern</h3>
+          <p class="text-gray-600">Shared Facilities Library, Pagoh Edu Hub | February 2018 - June 2018</p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Assisted in preparing reports, newsletters, and promotional materials</li>
+            <li>Managed scheduling, bookings, and event coordination for training sessions</li>
+            <li>Maintained digital and physical records, ensuring compliance with standards</li>
+          </ul>
+        </div>
+        <div class="animate-slideInLeft" style="animation-delay: 0.8s;">
+          <h3 class="text-xl font-semibold">Full-time Caregiver</h3>
+          <p class="text-gray-600">January 2022 - Present</p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Dedicated time to raising children while managing household responsibilities</li>
+            <li>Strengthened multitasking, time management, and problem-solving skills</li>
+            <li>Continued professional development through readings and online courses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="experience-item">
-      <h3>Administrative Assistant & Teacher</h3>
-      <p><em>Al-Ihsan Integrated Islamic School | Apr 2022 – Jan 2023</em></p>
-      <ul>
-        <li>Managed student records and coordinated events</li>
-        <li>Developed lesson plans and enhanced classroom engagement</li>
+  <!-- Education Section -->
+  <section id="education" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center animate-slideInLeft">Education</h2>
+      <div class="space-y-8">
+        <div class="animate-slideInLeft" style="animation-delay: 0.2s;">
+          <h3 class="text-xl font-semibold">Bachelor's in Information Science (Library Management)</h3>
+          <p class="text-gray-600">University Teknologi Mara (UTM), Negeri Sembilan | 2016 - 2018</p>
+          <p class="text-gray-600">CGPA: 3.73</p>
+        </div>
+        <div class="animate-slideInLeft" style="animation-delay: 0.4s;">
+          <h3 class="text-xl font-semibold">Diploma in Information Management</h3>
+          <p class="text-gray-600">University Teknologi Mara (UTM), Johor | 2013 - 2016</p>
+          <p class="text-gray-600">CGPA: 3.63</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center animate-slideInLeft">Skills</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <li class="animate-slideInLeft" style="animation-delay: 0.2s;">Microsoft Office Suite (Word, PowerPoint, Excel)</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.3s;">Design Tools: Adobe Premiere, Photoshop, Canva</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.4s;">Office Administration & Records Management</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.5s;">Document Preparation & Data Entry</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.6s;">Event Coordination & Scheduling</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.7s;">Digital Content & Social Media Management</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.8s;">Customer Service & Communication</li>
+        <li class="animate-slideInLeft" style="animation-delay: 0.9s;">Procurement & Inventory Management</li>
       </ul>
     </div>
+  </section>
 
-    <div class="experience-item">
-      <h3>Librarian</h3>
-      <p><em>Straits International School | Aug 2018 – Feb 2022</em></p>
-      <ul>
-        <li>Managed acquisition, cataloging, and circulation</li>
-        <li>Maintained filing systems and budget tracking</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>Librarian Intern</h3>
-      <p><em>Shared Facilities Library, Pagoh Edu Hub | Feb 2018 – Jun 2018</em></p>
-      <ul>
-        <li>Assisted in event coordination and internal communication</li>
-        <li>Managed digital and physical records</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>Full-time Caregiver</h3>
-      <p><em>Jan 2022 – Present</em></p>
-      <p>Managed household responsibilities and focused on personal development through online learning.</p>
+  <!-- Publication Section -->
+  <section id="publication" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center animate-slideInLeft">Publication</h2>
+      <div class="animate-slideInLeft" style="animation-delay: 0.2s;">
+        <p class="text-gray-600">Nor Aina Najwa Ibrahim & Nor Emalizatul Ain Ahmad Jumadi (2017). <i>Data security: Travel Securely</i>. FIM Communication, 4(2), pp.31-35. ISSN 2289-9103</p>
+      </div>
     </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill">Microsoft Office</div>
-      <div class="skill">Adobe Premiere</div>
-      <div class="skill">Photoshop</div>
-      <div class="skill">Canva</div>
-      <div class="skill">Records Management</div>
-      <div class="skill">Event Coordination</div>
-      <div class="skill">Data Entry</div>
-      <div class="skill">Customer Service</div>
-      <div class="skill">Digital Content</div>
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p>References available upon request</p>
+      <p>&copy; 2025 Nor Aina Najwa. All rights reserved.</p>
     </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education-item">
-      <h3>Bachelor's in Information Science (Library Management)</h3>
-      <p><em>UiTM Negeri Sembilan | GPA: 3.73</em></p>
-    </div>
-    <div class="education-item">
-      <h3>Diploma in Information Management</h3>
-      <p><em>UiTM Johor | GPA: 3.63</em></p>
-    </div>
-  </section>
-
-  <section id="publication">
-    <h2>Publication</h2>
-    <p><strong>Data Security: Travel Securely</strong><br/>
-    Nor Aina Najwa Ibrahim & Nor Ermalizatul Ain Ahmad Jumadi (2017). FIM Communication, 4(2), pp.31-35.</p>
-  </section>
-
-  <footer>
-    <p>References available upon request</p>
-    <p>&copy; 2025 Nor Aina Najwa</p>
   </footer>
 
-</body>
-</html>
+  <script>
+    // Add scroll animation trigger
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.animate-fadeInUp, .animate-slideInLeft');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeInUp', 'animate-slideInLeft');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
