@@ -73,6 +73,21 @@
       color: white;
     }
 
+    .print-button {
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .print-button button {
+      padding: 0.75rem 1.5rem;
+      background: #0096c7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     footer {
       background: #0077b6;
       color: white;
@@ -84,6 +99,21 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @media print {
+      nav, .print-button, footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      section {
+        page-break-after: always;
+      }
+    }
   </style>
 </head>
 <body>
@@ -93,6 +123,10 @@
     <p>Administrative & Library Professional | Johor, Malaysia</p>
     <p>📧 ainaa.ibrahim00@gmail.com | 📞 0199356465</p>
   </header>
+
+  <div class="print-button">
+    <button onclick="window.print()">📄 Save as PDF / Print</button>
+  </div>
 
   <nav>
     <a href="#about">About</a>
