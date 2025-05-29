@@ -24,6 +24,7 @@
     nav {
       background: #023e8a;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       padding: 1rem;
       position: sticky;
@@ -33,7 +34,7 @@
 
     nav a {
       color: white;
-      margin: 0 1rem;
+      margin: 0.5rem;
       text-decoration: none;
       font-weight: 600;
     }
@@ -112,6 +113,42 @@
 
       section {
         page-break-after: always;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        padding: 1rem;
+        font-size: 14px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section {
+        padding: 1rem 5%;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .print-button button {
+        width: 90%;
+        font-size: 16px;
+        padding: 1rem;
+      }
+
+      .skills-list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .skill {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
